@@ -1,0 +1,92 @@
+services:
+    postgres:
+        image: docker.arvancloud.ir/postgres:18-alpine
+        container_name: farzadfaalir_postgres
+        environment:
+            POSTGRES_DB: "${POSTGRES_DB:-farzadfaalir}"
+            POSTGRES_USER: "${POSTGRES_USER:-postgres}"
+            POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-postgres}"
+        volumes:
+            - farzadfaalir_pgdata:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
+            interval: 5s
+            timeout: 5s
+            retries: 5
+        restart: unless-stopped
+
+    redis:
+        image: docker.arvancloud.ir/redis:8-alpine
+        container_name: farzadfaalir_redis
+        ports:
+            - "6379:6379"
+        healthcheck:
+            test: ["CMD", "redis-cli", "ping"]
+            interval: 5s
+            timeout: 5s
+            retries: 5
+        restart: unless-stopped
+
+    migrate:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile
+            target: backend
+            args:
+                DJANGO_ENV: ${DJANGO_ENV:-development}
+        container_name: farzadfaalir_migrate
+        command: python manage.py migrate --noinput
+        volumes:
+            - ../backend:/app/backend
+        env_file:
+            - ../.env
+        depends_on:
+            postgres:
+                condition: service_healthy
+        restart: "no"
+
+    django:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile
+            target: backend
+            args:
+                DJANGO_ENV: ${DJANGO_ENV:-development}
+        container_name: farzadfaalir_django
+        volumes:
+            - ../backend:/app/backend
+            - ../frontend:/app/frontend
+            - ../static:/app/static
+        env_file:
+            - ../.env
+        ports:
+            - "8000:8000"
+        command: python manage.py runserver 0.0.0.0:8000
+        depends_on:
+            migrate:
+                condition: service_completed_successfully
+            redis:
+                condition: service_healthy
+        restart: unless-stopped
+
+    vite:
+        image: docker.arvancloud.ir/node:25-alpine
+        container_name: farzadfaalir_vite
+        working_dir: /frontend
+        volumes:
+            - ../frontend:/frontend
+            - /frontend/node_modules
+        command: sh -c "npm install && npm run dev"
+        ports:
+            - "5173:5173"
+        depends_on:
+            django:
+                condition: service_started
+        restart: unless-stopped
+        tty: true
+        stdin_open: true
+
+volumes:
+    farzadfaalir_pgdata:

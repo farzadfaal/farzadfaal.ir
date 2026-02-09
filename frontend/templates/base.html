@@ -1,0 +1,23 @@
+{% load static django_vite %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta name="keywords" content="">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}{% endblock title %}</title>
+        <meta name="description" content="{% block description %}{% endblock description %}" />
+        <link rel="canonical" href="/">
+        {% vite_hmr_client %}
+        {% vite_asset 'js/main.js' %}
+        <link rel="preload"
+              href="{% static 'fonts/iransans/iransans.woff2' %}"
+              as="font"
+              type="font/woff2"
+              crossorigin="anonymous" />
+    </head>
+    <body class="antialiased {% block body_class %}{% endblock body_class %}">
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

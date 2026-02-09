@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+.env
+.venv
+venv/
+ENV/
+
+# Django
+media/
+staticfiles/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# CI artifacts
+coverage/
+dist/
+build/
