@@ -1,1 +1,16 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+    themes:
+        night --default,
+        night --prefersdark;
+}
+
+@theme {
+    --font-sans: "Jura", sans-serif;
+}
+
+@layer utilities {
+    .container {
+        @apply mx-auto;
+    }
+}
