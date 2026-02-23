@@ -43,5 +43,5 @@ DJANGO_VITE = {
 
 # Wagtail
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10_000
-WAGTAIL_SITE_NAME = "فرزاد فعال"
+WAGTAIL_SITE_NAME = "Farzad Faal"
 WAGTAILADMIN_BASE_URL = env.str("WAGTAILADMIN_BASE_URL", default="localhost")

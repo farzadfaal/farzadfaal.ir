@@ -1,16 +1,21 @@
-<footer>
+{% load static wagtailcore_tags %}
+<footer class="bg-base-200 py-8">
   <div class="container">
-    <div class="flex flex-col items-center">
-      <div class="flex flex-col gap-4">
-        <p>
-          Designed &amp; Developed by <span class="text-primary">Farzad Faal</span>
-        </p>
-        <p>
-          Built with <span class="text-secondary">Django</span> &amp; <span class="text-secondary">Wagtail</span>
+    <div class="flex flex-col md:flex-row md:justify-between items-center gap-2 md:gap-0">
+      <div class="flex flex-col md:flex-row items-center gap-2 md:gap-0">
+        <div class="flex items-center">
+          {% include "includes/logo.html" %}
+          <span class="border-r border-base-content hidden md:inline md:mx-4 min-h-4"></span>
+        </div>
+        <p class="text-center md:text-start">
+          Designed &amp; Developed by <a class="link link-secondary">Me</a>.
+          <br class="md:hidden" />
+          Built with <a class="link link-secondary" href="https://djangoproject.com">Django</a> &amp; <a class="link link-secondary" href="https://wagtail.org">Wagtail</a>.
         </p>
       </div>
-      <div class="flex items-center gap-8">
-        <a href="" class="btn btn-square btn-ghost">
+      <div class="flex items-center gap-2">
+        <a href="https://linkedin.com/in/farzadfaal"
+           class="btn btn-square btn-ghost">
           <svg xmlns="http://www.w3.org/2000/svg"
                width="24"
                height="24"
@@ -20,7 +25,7 @@
             <path d="M17 2a5 5 0 0 1 5 5v10a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-10a5 5 0 0 1 5 -5zm-9 8a1 1 0 0 0 -1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0 -1 -1m6 0a3 3 0 0 0 -1.168 .236l-.125 .057a1 1 0 0 0 -1.707 .707v5a1 1 0 0 0 2 0v-3a1 1 0 0 1 2 0v3a1 1 0 0 0 2 0v-3a3 3 0 0 0 -3 -3m-6 -3a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" />
           </svg>
         </a>
-        <a href="" class="btn btn-square btn-ghost">
+        <a href="mailto:farzadfaal@outlook.com" class="btn btn-square btn-ghost">
           <svg xmlns="http://www.w3.org/2000/svg"
                width="24"
                height="24"

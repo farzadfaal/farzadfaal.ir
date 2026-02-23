@@ -1,0 +1,48 @@
+{% load wagtailcore_tags %}
+<header class="bg-base-100 border-b border-base-200">
+  <div class="container">
+    <nav class="navbar px-0">
+      <div class="navbar-start w-auto">
+        {% comment %} Brand Logo {% endcomment %}
+        {% include "includes/logo.html" %}
+      </div>
+      {% comment %} Desktop Menu {% endcomment %}
+      <div class="navbar-center hidden md:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <a href="{% slugurl 'home' %}">Home</a>
+          </li>
+          <li>
+            <a href="{% slugurl 'about' %}">About</a>
+          </li>
+          <li>
+            <a href="{% slugurl 'contact' %}">Contact</a>
+          </li>
+          <li>
+            <a href="{% slugurl 'blog' %}">Blog</a>
+          </li>
+          <li>
+            <a href="{% slugurl 'portfolio' %}">Portfolio</a>
+          </li>
+        </ul>
+        {% comment %} Mobile Menu {% endcomment %}
+      </div>
+      <div class="navbar-end gap-2 w-auto ms-auto">
+        <a class="btn btn-primary">Let's talk!</a>
+        {% comment %} Mobile Menu Button {% endcomment %}
+        <button class="btn btn-square md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="24"
+               height="24"
+               viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+            <path d="M20 7H4" />
+            <path d="M20 12H4" opacity="0.5" />
+            <path d="M20 17H4" />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

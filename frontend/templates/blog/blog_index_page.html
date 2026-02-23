@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% comment %} djlint:off {% endcomment %}
+{% block title %}{{ page.seo_title }}{% endblock title %}
+{% block description %}{{ page.search_description }}{% endblock description %}
+
+{% block body %}
+<header class="py-16 md:py-32 bg-base-200">
+  <div class="container">
+    <h1 class="text-4xl md:text-6xl font-black">{{ page.title }}</h1>
+    <p class="text-lg text-base-content/90">{{ page.excerpt }}</p>
+  </div>
+</header>
+<section class="py-16">
+  <div class="container">
+    <div class="divide-y divide-base-300">
+      {% for post in posts %}
+        <div class="py-4">
+          <h2 class="text-xl md:text-2xl font-bold"><a href="{% slugurl post.slug %}">{{ post.title }}</a></h2>
+          <p class="text-sm md:text-base text-base-content/90 mb-4">{{ post.excerpt }}</p>
+          <a href="{% slugurl post.slug %}" class="link link-primary">Read More...</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock body %}

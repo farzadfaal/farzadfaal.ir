@@ -1,0 +1,10 @@
+{% load wagtailcore_tags %}
+{% comment %} djlint:off {% endcomment %}
+<section class="min-h-96 flex flex-col justify-center py-16 md:py-32">
+  <div class="container">
+    <h1 class="text-6xl font-black mb-2">Hello, I'm <span class="text-primary">{{ page.hero_title }}</span></h1>
+    <p class="text-2xl mb-8 font-bold text-base-content/80">{{ page.hero_subtitle }}</p>
+    <div class="text-base-content/90">{{ page.hero_description|richtext }}</div>
+    <a class="btn btn-outline btn-primary mt-8">{{ page.hero_button }}</a>
+  </div>
+</section>

@@ -1,16 +1,37 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-    themes:
-        night --default,
-        night --prefersdark;
+    themes: winter --default;
+    /* night --prefersdark; */
 }
 
+@plugin "daisyui/theme" {
+    name: "winter";
+    default: true;
+    color-scheme: winter;
+
+    --radius-selector: 0;
+    --radius-field: 0;
+    --radius-box: 0;
+}
+
+/* @plugin "daisyui/theme" {
+    name: "night";
+    prefersdark: true;
+    color-scheme: dark;
+
+    --radius-selector: 0;
+    --radius-field: 0;
+    --radius-box: 0;
+} */
+
+/* @custom-variant dark (&:where([data-theme=night], [data-theme=night] *)); */
+
 @theme {
-    --font-sans: "Jura", sans-serif;
+    --font-sans: "Inter", sans-serif;
 }
 
 @layer utilities {
     .container {
-        @apply mx-auto;
+        @apply mx-auto px-4 lg:max-w-220 xl:max-w-272 2xl:max-w-272;
     }
 }
