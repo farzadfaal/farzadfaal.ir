@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% comment %} djlint:off {% endcomment %}
+{% block body %}
+<header class="py-16 bg-base-200">
+  <div class="container">
+    {% block page_title %}{% endblock page_title %}
+    {% block page_subtitle %}{% endblock page_subtitle %}
+  </div>
+</header>
+<section class="py-16">
+  <div class="container">{% block page_content %}{% endblock page_content %}</div>
+</section>
+{% endblock body %}
