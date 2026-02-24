@@ -64,4 +64,7 @@ class BlogPostPage(RoutablePage):
 
 
 class BlogCategoryPage(RoutablePage):
+    subpage_types = []
+    parent_page_types = ["blog.BlogIndexPage"]
+
     content_panels = RoutablePage.content_panels + []

@@ -43,11 +43,15 @@ class HomePage(RoutablePage):
 
 class AboutPage(RoutablePage):
     subpage_types = []
+    parent_page_types = ["pages.HomePage"]
+
     content_panels = RoutablePage.content_panels
 
 
 class ContactPage(RoutablePage):
     subpage_types = []
+    parent_page_types = ["pages.HomePage"]
+
     content_panels = RoutablePage.content_panels
 
 
