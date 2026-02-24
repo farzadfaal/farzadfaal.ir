@@ -4,7 +4,7 @@
 
 - [ ] Header
 - [ ] Footer
-- [ ] Base layout
+- [x] Base layout
 
 ## Pages
 
@@ -18,8 +18,8 @@
 
 ### Posts
 
-- [ ] Create post
-- [ ] Post details
+- [x] Create post
+- [x] Post details
 - [ ] Posts archive (paginated)
 
 ### Catetories
@@ -67,3 +67,26 @@
 - [ ] Create course lesson
 - [ ] Course lesson details (Video, article, resource, downloadable content)
 - [ ] Course and lesson comments
+
+## Blog posts
+
+- [ ] Current Website
+- [ ] Pvkar (What I've learned so far)
+- [ ] Textlext (What I've learned so far)
+
+## Portfolio Items
+
+- [ ] Pvkar
+- [ ] Current website
+- [ ] Textlext
+- [ ] Pvkar matrix
+- [ ] Koohsaran (Database Design)
+- [ ] Asid Charban Shimi
+- [ ] Azaran Taghtir 1 & 2 (Database Design)
+- [ ] Mojtaba Kazemi
+- [ ] Mohammad Mohammadi
+- [ ] Aryastudy
+- [ ] vtnoffice.com
+- [ ] Hamvatan
+- [ ] Hamyari
+- [ ] NOCRM (Notary Office Customer Relationship Management)
