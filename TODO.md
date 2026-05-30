@@ -9,6 +9,19 @@
 ## Pages
 
 - [ ] Homepage
+    - [ ] Hero title: Farzad
+    - [ ] Hero subtitle: Backend Software Engineer & Solution Designer
+    - [ ] Hero description: I spcialize in Backend Engineering with a strong focus on REST APIs, background processing, and data-intensive applications. I've also a proven ownership of backend architectures used by tens of thousands of users in B2B and B2C environments.
+    - [ ] Hero button text: Get in touch
+    - [ ] Skills section
+        - [ ] Title: Technical Expertise
+        - [ ] Description: Technologies, tools, and disciplines used to design, build, and operate production systems
+    - [ ] Blog section
+        - [ ] Title: The Latency Diaries
+        - [ ] Description: Observations on software architecture, tooling, and operational lessons
+    - [ ] Portfolio section
+        - [ ] Title: Architecture In Practice
+        - [ ] Description: Aconcrete implementations of backend systems, tooling and infrastructure
 - [ ] Inner pages
     - [ ] About
     - [ ] Contact

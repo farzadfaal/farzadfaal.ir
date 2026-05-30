@@ -10,7 +10,11 @@ class PortfolioIndexPage(RoutablePage):
     subpage_types = ["portfolio.PortfolioItemPage"]
     parent_page_types = ["pages.HomePage"]
 
-    content_panels = RoutablePage.content_panels + []
+    excerpt = models.TextField(blank=True)
+
+    content_panels = RoutablePage.content_panels + [
+        FieldPanel("excerpt"),
+    ]
 
     @path("")
     def portfolio_index(self, request):
